@@ -9,21 +9,32 @@ function FeedbackForm() {
   const [rating, setRating] = useState(10);
 
   const handleTextChange = (e) => {
-    setText(e.target.value);
     if (text === "") {
       setBtnDisabled(true);
       setMessage(null);
     } else if (text !== "" && text.trim().length <= 10) {
-      setBtnDisabled(true);
       setMessage("Text must be at least 10 characters");
+      setBtnDisabled(true);
     } else {
-      setBtnDisabled(false);
       setMessage(null);
+      setBtnDisabled(false);
+    }
+    setText(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.trim().length > 10) {
+      const newFeedback = {
+        text,
+        rating,
+      };
+      console.log(newFeedback);
     }
   };
   return (
     <Card>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
         <RatingSelect
           select={(rating) => {
