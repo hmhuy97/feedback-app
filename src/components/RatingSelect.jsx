@@ -10,6 +10,7 @@ function RatingSelect({ select }) {
   const handleChange = (e) => {
     setSelected(+e.currentTarget.value);
     select(+e.currentTarget.value);
+    // select(+e.currentTarget.value);
   };
 
   // NOTE: simplified with iteration
