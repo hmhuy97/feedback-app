@@ -9,6 +9,8 @@ import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import AboutPage from "./pages/AboutPage";
 import AboutIconLink from "./components/AboutIconLink";
+import Card from "./components/shared/Card";
+import Post from "./components/Post";
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
   const addFeedback = (newFeedback) => {
@@ -42,6 +44,7 @@ function App() {
             }
           />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/post/:id/:name" element={<Post />} />
         </Routes>
       </div>
     </Router>
