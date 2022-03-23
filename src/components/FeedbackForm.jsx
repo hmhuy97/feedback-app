@@ -10,7 +10,9 @@ function FeedbackForm() {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
   const [rating, setRating] = useState(10);
+
   const { addFeedback } = useContext(FeedbackContext);
+
   const handleTextChange = (e) => {
     if (text === "") {
       setBtnDisabled(true);
@@ -36,6 +38,7 @@ function FeedbackForm() {
       setText("");
     }
   };
+  
   return (
     <Card>
       <form onSubmit={handleSubmit}>
