@@ -5,11 +5,14 @@ import { useContext } from "react";
 import FeedbackContext from "../context/FeedbackContext";
 
 function FeedbackList() {
-  const { feedback } = useContext(FeedbackContext);
-  if (!feedback || feedback.length === 0) {
+  const { feedback, isLoading } = useContext(FeedbackContext);
+
+  if (!isLoading && (!feedback || feedback.length === 0)) {
     return <p>No Feedback Yet</p>;
   }
-  return (
+  return isLoading ? (
+    <h3>Loading...</h3>
+  ) : (
     <div className="feedback-list">
       <AnimatePresence>
         {feedback.map((item) => (
@@ -25,6 +28,7 @@ function FeedbackList() {
       </AnimatePresence>
     </div>
   );
+
   // console.log(feedback);
   // return (
   //   <div className="feedback-list">
