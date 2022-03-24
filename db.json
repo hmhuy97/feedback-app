@@ -16,9 +16,14 @@
       "text": "This is feedback item 3 coming from the backend"
     },
     {
-      "rating`": "6",
-      "text": "New feedback item",
-      "id": 4
+      "id": 4,
+      "rating": "6",
+      "text": "New feedback item"
+    },
+    {
+      "text": "this tisda asd",
+      "rating": 5,
+      "id": 5
     }
   ]
 }
